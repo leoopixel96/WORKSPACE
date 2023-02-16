@@ -7,9 +7,39 @@ namespace ControllerNamespace
 {
     struct Element
     {
-        public int key;
-        public int mood;
-        public string description;
+        private int key;
+        private int mood;
+        private string description;
+        public Element(int key, int mood, int description)
+        {
+            this.key = key;
+            this.mood = mood;
+            this.description = description;
+        }
+        public int getKey()
+        {
+            return this.key;
+        }
+        public int getMood()
+        {
+            return this.mood;
+        }
+        public string getDescription()
+        {
+            return this.description;
+        }
+        public void setKey(int key)
+        {
+            this.key = key;
+        }
+        public void setMood(int mood)
+        {
+            this.mood = mood;
+        }
+        public void setDescription(string description)
+        {
+            this.description = description;
+        }
     }
     public class Controller
     {
@@ -18,7 +48,7 @@ namespace ControllerNamespace
         {
             try
             {
-                sortedElements.Add(element.key, element);
+                sortedElements.Add(element);
             }
             catch(ArgumentException exception)
             {
@@ -30,7 +60,19 @@ namespace ControllerNamespace
         {
             try
             {
-                sortedElements.Remove(element.key, element);
+                sortedElements.Remove(element);
+            }
+            catch(ArgumentException exception)
+            {
+                Console.WriteLine(exception);
+            }
+        }
+
+        public void editElement(Element element)
+        {
+            try
+            {
+                sortedElements.get
             }
             catch(ArgumentException exception)
             {
@@ -38,5 +80,4 @@ namespace ControllerNamespace
             }
         }
     }
-
 }
